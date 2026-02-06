@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Hotel Sipayi | Get in Touch</title>
+    <meta name="description" content="Contact Hotel Sipayi. Phone: +91 98765 43210. Address: Sahukar Chennaiah Road, Kuvempunagara North, Mysuru. Open till 11 PM.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar glass">
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="logo" onclick="window.location.href='../index.html'">
+                <div class="logo-circle"><span>HS</span></div>
+                <div class="logo-text">
+                    <h1>Hotel Sipayi</h1>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Contact Header -->
+<section class="page-header">
+    <div class="container text-center">
+        <h1>Get in Touch</h1>
+        <p>We'd love to hear from you. Reach out for reservations or inquiries.</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <h2>Contact Information</h2>
+
+                <div class="info-card">
+                    <div class="info-icon">📍</div>
+                    <div>
+                        <h3>Address</h3>
+                        <p>Sahukar Chennaiah Road, Kuvempunagara North<br>TK Layout, Mysuru, Karnataka 570009</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">📞</div>
+                    <div>
+                        <h3>Phone</h3>
+                        <a href="tel:+919876543210" class="contact-link">+91 98765 43210</a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">💬</div>
+                    <div>
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/919876543210" target="_blank" class="contact-link">Chat with us</a>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">🕐</div>
+                    <div>
+                        <h3>Hours</h3>
+                        <p><strong>Open Now</strong><br>Daily: 10:00 AM - 11:00 PM</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <h2>Send us a Message</h2>
+                <form id="contactForm" class="contact-form">
+                    <div id="formMessage"></div>
+
+                    <div class="form-group">
+                        <label for="name">Name *</label>
+                        <input type="text" id="name" name="name" required minlength="2">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone *</label>
+                        <input type="tel" id="phone" name="phone" required minlength="10" maxlength="15">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message *</label>
+                        <textarea id="message" name="message" rows="5" required minlength="10"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-primary btn-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="copyright">© 2024 Hotel Sipayi. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/security.js"></script>
+<script>
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
+        e.preventDefault();
+
+        // Get form data
+        const formData = {
+            name: sanitizeInput(document.getElementById('name').value),
+            email: sanitizeInput(document.getElementById('email').value),
+            phone: sanitizeInput(document.getElementById('phone').value),
+            message: sanitizeInput(document.getElementById('message').value)
+        };
+
+        // Validate
+        if (!validateEmail(formData.email)) {
+            showMessage('Please enter a valid email address', 'error');
+            return;
+        }
+
+        if (!validatePhone(formData.phone)) {
+            showMessage('Please enter a valid phone number', 'error');
+            return;
+        }
+
+        // Show loading
+        const submitBtn = document.querySelector('.btn-submit');
+        submitBtn.textContent = 'Sending...';
+        submitBtn.disabled = true;
+
+        // Simulate API call (replace with actual API)
+        setTimeout(() => {
+            showMessage('Thank you! Your message has been received. We will contact you soon.', 'success');
+            document.getElementById('contactForm').reset();
+            submitBtn.textContent = 'Send Message';
+            submitBtn.disabled = false;
+        }, 1000);
+    });
+
+    function showMessage(text, type) {
+        const messageDiv = document.getElementById('formMessage');
+        messageDiv.textContent = text;
+        messageDiv.className = 'form-message ' + type;
+        messageDiv.style.display = 'block';
+
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
+        }, 5000);
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,284 @@
+/* ========== RESPONSIVE BREAKPOINTS ========== */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+    /* Navigation */
+    .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2rem;
+        box-shadow: var(--shadow-xl);
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        gap: 1rem;
+    }
+
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .logo-text .tagline {
+        display: none;
+    }
+
+    /* Hero */
+    .hero {
+        padding: 6rem 0 3rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.125rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Services */
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Featured */
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* About */
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image img {
+        height: 300px;
+    }
+
+    .about-stats {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    /* Section Headers */
+    .section-header h2 {
+        font-size: 2rem;
+    }
+
+    /* Location CTA */
+    .location-cta h2 {
+        font-size: 2rem;
+    }
+
+    .location-address {
+        font-size: 1rem;
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .cta-buttons a {
+        width: 100%;
+    }
+
+    /* Mobile CTA */
+    .mobile-cta {
+        display: grid;
+    }
+
+    body {
+        padding-bottom: 70px;
+    }
+
+    /* Menu Page */
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-title {
+        font-size: 2rem;
+    }
+
+    /* Cart Page */
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .item-controls {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    /* Contact Page */
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 1rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .status-badge {
+        font-size: 0.875rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .hero-badges {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+
+    .service-card {
+        padding: 1.5rem;
+    }
+
+    .dish-card img {
+        height: 200px;
+    }
+
+    .location-cta h2 {
+        font-size: 1.75rem;
+    }
+
+    .page-header h1 {
+        font-size: 2rem;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+    }
+
+    .menu-item {
+        padding: 1rem;
+    }
+
+    .item-info h3 {
+        font-size: 1rem;
+    }
+
+    .item-price {
+        font-size: 1.25rem;
+    }
+
+    .cart-notification {
+        right: 10px;
+        left: 10px;
+        text-align: center;
+    }
+}
+
+/* Large Desktop (1440px and above) */
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1400px;
+    }
+
+    .hero-title {
+        font-size: 4rem;
+    }
+
+    .section-header h2 {
+        font-size: 3rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .mobile-cta,
+    .cart-notification,
+    .hamburger {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 2rem 0;
+    }
+
+    body {
+        background: white;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        border: 1px solid black;
+        color: black;
+        background: white;
+    }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+    .btn-primary {
+        border: 2px solid black;
+    }
+
+    .nav-link:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    /* Optional: Add dark mode styles if needed */
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Hotel Sipayi</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar glass">
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="logo" onclick="window.location.href='../index.html'">
+                <div class="logo-circle"><span>HS</span></div>
+                <div class="logo-text">
+                    <h1>Hotel Sipayi</h1>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link">Menu</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Cart Section -->
+<section class="cart-section">
+    <div class="container">
+        <h1 class="page-title">Your Cart</h1>
+        <div id="cartContainer"></div>
+        <div id="emptyCart" class="empty-cart" style="display: none;">
+            <p>Your cart is empty</p>
+            <a href="menu.html" class="btn-primary">Browse Menu</a>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <p class="copyright">© 2024 Hotel Sipayi. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/cart.js"></script>
+<script>
+    function displayCart() {
+        const cart = getCart();
+        const container = document.getElementById('cartContainer');
+        const emptyCart = document.getElementById('emptyCart');
+
+        if (cart.length === 0) {
+            container.style.display = 'none';
+            emptyCart.style.display = 'block';
+            return;
+        }
+
+        let total = 0;
+        let html = '<div class="cart-items">';
+
+        cart.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            total += itemTotal;
+
+            html += `
+                <div class="cart-item">
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <p class="item-price">₹${item.price}</p>
+                    </div>
+                    <div class="item-controls">
+                        <button onclick="updateQuantity(${index}, -1)">-</button>
+                        <span>${item.quantity}</span>
+                        <button onclick="updateQuantity(${index}, 1)">+</button>
+                        <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
+                    </div>
+                    <p class="item-total">₹${itemTotal}</p>
+                </div>
+            `;
+        });
+
+        html += `
+            </div>
+            <div class="cart-summary">
+                <h3>Order Summary</h3>
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span>₹${total}</span>
+                </div>
+                <div class="summary-row">
+                    <span>Delivery Fee:</span>
+                    <span>₹40</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span>₹${total + 40}</span>
+                </div>
+                <button class="btn-primary btn-checkout" onclick="proceedToCheckout()">Proceed to Checkout</button>
+            </div>
+        `;
+
+        container.innerHTML = html;
+    }
+
+    function updateQuantity(index, change) {
+        const cart = getCart();
+        cart[index].quantity += change;
+        if (cart[index].quantity <= 0) {
+            cart.splice(index, 1);
+        }
+        saveCart(cart);
+        displayCart();
+    }
+
+    function removeFromCart(index) {
+        const cart = getCart();
+        cart.splice(index, 1);
+        saveCart(cart);
+        displayCart();
+    }
+
+    function proceedToCheckout() {
+        alert('Redirecting to checkout... (Feature to be implemented)');
+    }
+
+    displayCart();
+</script>
+</body>
+</html>

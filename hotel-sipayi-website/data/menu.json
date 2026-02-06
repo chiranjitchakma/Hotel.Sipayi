@@ -1,0 +1,387 @@
+{
+  "restaurant": {
+    "name": "Hotel Sipayi",
+    "location": "Mysuru, Karnataka",
+    "rating": 4.6,
+    "reviews": 148,
+    "priceRange": "₹200-400"
+  },
+  "categories": [
+    {
+      "id": 1,
+      "name": "Biryani Special",
+      "description": "Aromatic biryanis made with authentic spices",
+      "items": [
+        {
+          "id": 101,
+          "name": "Chicken Biryani",
+          "description": "Aromatic basmati rice with tender chicken pieces",
+          "price": 250,
+          "veg": false,
+          "spicy": 2,
+          "popular": true,
+          "image": "biryani-chicken.jpg"
+        },
+        {
+          "id": 102,
+          "name": "Mutton Biryani",
+          "description": "Slow-cooked mutton with fragrant spices",
+          "price": 300,
+          "veg": false,
+          "spicy": 2,
+          "popular": true,
+          "image": "biryani-mutton.jpg"
+        },
+        {
+          "id": 103,
+          "name": "Egg Biryani",
+          "description": "Flavorful rice with boiled eggs",
+          "price": 180,
+          "veg": false,
+          "spicy": 1,
+          "popular": false,
+          "image": "biryani-egg.jpg"
+        },
+        {
+          "id": 104,
+          "name": "Veg Biryani",
+          "description": "Mixed vegetables with aromatic rice",
+          "price": 150,
+          "veg": true,
+          "spicy": 1,
+          "popular": false,
+          "image": "biryani-veg.jpg"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Thali Options",
+      "description": "Complete meals with variety",
+      "items": [
+        {
+          "id": 201,
+          "name": "Special Thali",
+          "description": "Rice, 2 rotis, dal, 2 curries, raita, dessert",
+          "price": 200,
+          "veg": true,
+          "spicy": 1,
+          "popular": true,
+          "image": "thali-special.jpg"
+        },
+        {
+          "id": 202,
+          "name": "Mini Thali",
+          "description": "Rice, roti, dal, curry, raita",
+          "price": 150,
+          "veg": true,
+          "spicy": 1,
+          "popular": false,
+          "image": "thali-mini.jpg"
+        },
+        {
+          "id": 203,
+          "name": "Non-Veg Thali",
+          "description": "Rice, rotis, chicken curry, dal, raita",
+          "price": 280,
+          "veg": false,
+          "spicy": 2,
+          "popular": true,
+          "image": "thali-nonveg.jpg"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "North Indian Curries",
+      "description": "Rich and flavorful curries",
+      "items": [
+        {
+          "id": 301,
+          "name": "Paneer Butter Masala",
+          "description": "Creamy tomato curry with soft paneer cubes",
+          "price": 180,
+          "veg": true,
+          "spicy": 1,
+          "popular": true,
+          "image": "paneer-butter.jpg"
+        },
+        {
+          "id": 302,
+          "name": "Dal Tadka",
+          "description": "Yellow lentils tempered with spices",
+          "price": 120,
+          "veg": true,
+          "spicy": 1,
+          "popular": false,
+          "image": "dal-tadka.jpg"
+        },
+        {
+          "id": 303,
+          "name": "Chicken Curry",
+          "description": "Traditional chicken gravy with spices",
+          "price": 220,
+          "veg": false,
+          "spicy": 2,
+          "popular": false,
+          "image": "chicken-curry.jpg"
+        },
+        {
+          "id": 304,
+          "name": "Butter Chicken",
+          "description": "Rich and creamy chicken curry",
+          "price": 240,
+          "veg": false,
+          "spicy": 1,
+          "popular": true,
+          "image": "butter-chicken.jpg"
+        },
+        {
+          "id": 305,
+          "name": "Kadai Paneer",
+          "description": "Paneer with bell peppers in spicy gravy",
+          "price": 190,
+          "veg": true,
+          "spicy": 2,
+          "popular": false,
+          "image": "kadai-paneer.jpg"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "South Indian Favorites",
+      "description": "Authentic South Indian dishes",
+      "items": [
+        {
+          "id": 401,
+          "name": "Masala Dosa",
+          "description": "Crispy dosa with spiced potato filling",
+          "price": 80,
+          "veg": true,
+          "spicy": 1,
+          "popular": true,
+          "image": "masala-dosa.jpg"
+        },
+        {
+          "id": 402,
+          "name": "Plain Dosa",
+          "description": "Thin crispy rice crepe",
+          "price": 60,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "plain-dosa.jpg"
+        },
+        {
+          "id": 403,
+          "name": "Idli (2 pcs)",
+          "description": "Steamed rice cakes with chutney",
+          "price": 40,
+          "veg": true,
+          "spicy": 0,
+          "popular": true,
+          "image": "idli.jpg"
+        },
+        {
+          "id": 404,
+          "name": "Vada (2 pcs)",
+          "description": "Crispy lentil fritters",
+          "price": 50,
+          "veg": true,
+          "spicy": 1,
+          "popular": false,
+          "image": "vada.jpg"
+        },
+        {
+          "id": 405,
+          "name": "Upma",
+          "description": "Semolina cooked with vegetables",
+          "price": 60,
+          "veg": true,
+          "spicy": 1,
+          "popular": false,
+          "image": "upma.jpg"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Breads",
+      "description": "Freshly baked breads",
+      "items": [
+        {
+          "id": 501,
+          "name": "Butter Naan",
+          "description": "Soft tandoor-baked flatbread",
+          "price": 40,
+          "veg": true,
+          "spicy": 0,
+          "popular": true,
+          "image": "butter-naan.jpg"
+        },
+        {
+          "id": 502,
+          "name": "Garlic Naan",
+          "description": "Naan topped with garlic",
+          "price": 50,
+          "veg": true,
+          "spicy": 0,
+          "popular": true,
+          "image": "garlic-naan.jpg"
+        },
+        {
+          "id": 503,
+          "name": "Roti (2 pcs)",
+          "description": "Whole wheat flatbread",
+          "price": 30,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "roti.jpg"
+        },
+        {
+          "id": 504,
+          "name": "Paratha",
+          "description": "Layered flatbread",
+          "price": 45,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "paratha.jpg"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Rice & Accompaniments",
+      "description": "Rice dishes and sides",
+      "items": [
+        {
+          "id": 601,
+          "name": "Steamed Rice",
+          "description": "Plain basmati rice",
+          "price": 60,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "steamed-rice.jpg"
+        },
+        {
+          "id": 602,
+          "name": "Jeera Rice",
+          "description": "Cumin-flavored rice",
+          "price": 80,
+          "veg": true,
+          "spicy": 0,
+          "popular": true,
+          "image": "jeera-rice.jpg"
+        },
+        {
+          "id": 603,
+          "name": "Curd Rice",
+          "description": "Rice mixed with yogurt and tempering",
+          "price": 70,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "curd-rice.jpg"
+        },
+        {
+          "id": 604,
+          "name": "Raita",
+          "description": "Yogurt with cucumber and spices",
+          "price": 40,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "raita.jpg"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Beverages",
+      "description": "Refreshing drinks",
+      "items": [
+        {
+          "id": 701,
+          "name": "Lassi",
+          "description": "Sweet or salted yogurt drink",
+          "price": 60,
+          "veg": true,
+          "spicy": 0,
+          "popular": true,
+          "image": "lassi.jpg"
+        },
+        {
+          "id": 702,
+          "name": "Filter Coffee",
+          "description": "South Indian filter coffee",
+          "price": 40,
+          "veg": true,
+          "spicy": 0,
+          "popular": true,
+          "image": "filter-coffee.jpg"
+        },
+        {
+          "id": 703,
+          "name": "Masala Chai",
+          "description": "Spiced Indian tea",
+          "price": 30,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "masala-chai.jpg"
+        },
+        {
+          "id": 704,
+          "name": "Soft Drinks",
+          "description": "Coke, Sprite, Fanta",
+          "price": 40,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "soft-drinks.jpg"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Desserts",
+      "description": "Sweet endings",
+      "items": [
+        {
+          "id": 801,
+          "name": "Gulab Jamun (2 pcs)",
+          "description": "Soft milk balls in sugar syrup",
+          "price": 50,
+          "veg": true,
+          "spicy": 0,
+          "popular": true,
+          "image": "gulab-jamun.jpg"
+        },
+        {
+          "id": 802,
+          "name": "Rasmalai (2 pcs)",
+          "description": "Cottage cheese in sweet milk",
+          "price": 60,
+          "veg": true,
+          "spicy": 0,
+          "popular": true,
+          "image": "rasmalai.jpg"
+        },
+        {
+          "id": 803,
+          "name": "Ice Cream",
+          "description": "Vanilla, Chocolate, or Mango",
+          "price": 60,
+          "veg": true,
+          "spicy": 0,
+          "popular": false,
+          "image": "ice-cream.jpg"
+        }
+      ]
+    }
+  ]
+}

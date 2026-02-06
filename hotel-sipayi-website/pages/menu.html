@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Hotel Sipayi | Mysuru Restaurant</title>
+    <meta name="description" content="View our complete menu featuring Biryani, Thalis, North & South Indian dishes. Vegetarian and non-vegetarian options. Prices ₹40-300.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar glass">
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="logo" onclick="window.location.href='../index.html'">
+                <div class="logo-circle"><span>HS</span></div>
+                <div class="logo-text">
+                    <h1>Hotel Sipayi</h1>
+                    <p class="tagline">Authentic Flavors of Mysuru</p>
+                </div>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="menu.html" class="nav-link active">Menu</a>
+                <a href="../index.html#about" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+                <a href="cart.html" class="btn-cart">🛒 Cart (<span id="cartCount">0</span>)</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Menu Header -->
+<section class="page-header">
+    <div class="container text-center">
+        <h1>Our Menu</h1>
+        <p>Authentic flavors at prices that make you smile</p>
+        <p class="price-range">₹200 - ₹400 per person</p>
+    </div>
+</section>
+
+<!-- Menu Categories -->
+<section class="menu-section">
+    <div class="container">
+        <div id="menuContainer"></div>
+    </div>
+</section>
+
+<!-- Order CTA -->
+<section class="order-cta">
+    <div class="container text-center">
+        <h2>Ready to Order?</h2>
+        <p>Enjoy our delicious food from the comfort of your home</p>
+        <div class="cta-buttons">
+            <a href="https://www.swiggy.com" target="_blank" class="btn-primary">Order on Swiggy</a>
+            <a href="https://www.zomato.com" target="_blank" class="btn-primary">Order on Zomato</a>
+            <a href="cart.html" class="btn-secondary">View Cart</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <h3>Hotel Sipayi</h3>
+            <p>Serving authentic flavors of Mysuru</p>
+            <p class="copyright">© 2024 Hotel Sipayi. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="../js/cart.js"></script>
+<script src="../js/order.js"></script>
+<script>
+    // Load menu from JSON
+    async function loadMenu() {
+        try {
+            const response = await fetch('../data/menu.json');
+            const menuData = await response.json();
+            displayMenu(menuData);
+        } catch (error) {
+            console.error('Error loading menu:', error);
+        }
+    }
+
+    function displayMenu(menuData) {
+        const container = document.getElementById('menuContainer');
+        let html = '';
+
+        menuData.categories.forEach(category => {
+            html += `
+                <div class="menu-category">
+                    <h2 class="category-title">${category.name}</h2>
+                    <div class="menu-grid">
+                        ${category.items.map(item => `
+                            <div class="menu-item">
+                                <div class="item-header">
+                                    <div class="item-info">
+                                        <h3>${item.name}</h3>
+                                        <div class="veg-indicator ${item.veg ? 'veg' : 'non-veg'}">
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <p class="item-price">₹${item.price}</p>
+                                </div>
+                                <p class="item-description">${item.description}</p>
+                                <button class="btn-add-cart" onclick="addToCart('${item.name}', ${item.price})">Add to Cart</button>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        });
+
+        container.innerHTML = html;
+    }
+
+    // Update cart count
+    function updateCartCount() {
+        const cart = getCart();
+        const count = cart.reduce((total, item) => total + item.quantity, 0);
+        document.getElementById('cartCount').textContent = count;
+    }
+
+    loadMenu();
+    updateCartCount();
+</script>
+</body>
+</html>
