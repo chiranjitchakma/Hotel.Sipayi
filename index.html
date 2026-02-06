@@ -1,0 +1,261 @@
+
+📄 index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Sipayi - Authentic Flavors of Mysuru | Restaurant</title>
+    <meta name="description" content="Experience authentic Indian cuisine at Hotel Sipayi in Mysuru. Rated 4.6★ with 148+ reviews. Dine-in, drive-through, and delivery available. ₹200-400 per person.">
+    <meta name="keywords" content="Restaurant Mysuru, Hotel Sipayi, Biryani Mysuru, South Indian food, North Indian food, Kuvempunagara restaurant">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar glass" id="navbar">
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="logo" onclick="navigateTo('home')">
+                <div class="logo-circle">
+                    <span>HS</span>
+                </div>
+                <div class="logo-text">
+                    <h1>Hotel Sipayi</h1>
+                    <p class="tagline">Authentic Flavors of Mysuru</p>
+                </div>
+            </div>
+
+            <div class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active" onclick="navigateTo('home')">Home</a>
+                <a href="pages/menu.html" class="nav-link">Menu</a>
+                <a href="#about" class="nav-link" onclick="navigateTo('about')">About</a>
+                <a href="pages/contact.html" class="nav-link">Contact</a>
+                <a href="tel:+919876543210" class="btn-primary">Call Now</a>
+            </div>
+
+            <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="container">
+        <div class="hero-content">
+            <div class="status-badge">
+                <span>⏰ Open Now • Closes 11:00 PM</span>
+            </div>
+            <h1 class="hero-title">
+                Authentic Flavors of <span class="highlight">Mysuru</span>
+            </h1>
+            <p class="hero-subtitle">
+                Experience traditional Indian cuisine crafted with love and authentic spices
+            </p>
+            <div class="hero-badges">
+                <div class="rating-badge">
+                    <span class="star">⭐</span>
+                    <span class="rating">4.6</span>
+                    <span class="reviews">(148 reviews)</span>
+                </div>
+                <div class="price-badge">
+                    ₹200 - ₹400 per person
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="https://www.swiggy.com" target="_blank" class="btn-primary">
+                    🛍️ Order Online
+                </a>
+                <a href="tel:+919876543210" class="btn-secondary">
+                    📞 Call to Book
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Services Section -->
+<section class="services">
+    <div class="container">
+        <div class="section-header">
+            <h2>How We Serve You</h2>
+            <p>Choose your preferred way to enjoy our delicious meals</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🍽️</div>
+                <h3>Dine-In</h3>
+                <p>Experience authentic flavors in our warm, family-friendly ambiance</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🚗</div>
+                <h3>Drive-Through</h3>
+                <p>Quick and convenient pickup for meals on the go</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">🛵</div>
+                <h3>Home Delivery</h3>
+                <p>Fresh, hot meals delivered right to your doorstep</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Dishes Section -->
+<section class="featured" id="featured">
+    <div class="container">
+        <div class="section-header">
+            <h2>Customer Favorites</h2>
+            <p>Our most loved dishes, crafted with authentic recipes</p>
+        </div>
+        <div class="featured-grid">
+            <div class="dish-card card-hover">
+                <img src="https://images.unsplash.com/photo-1630851840633-f96999247032?w=400&h=300&fit=crop" alt="Chicken Biryani" loading="lazy">
+                <div class="dish-content">
+                    <h3>Chicken Biryani</h3>
+                    <p class="price">₹250</p>
+                    <button class="btn-add-cart" onclick="addToCart('Chicken Biryani', 250)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="dish-card card-hover">
+                <img src="https://images.unsplash.com/photo-1742281258189-3b933879867a?w=400&h=300&fit=crop" alt="Special Thali" loading="lazy">
+                <div class="dish-content">
+                    <h3>Special Thali</h3>
+                    <p class="price">₹200</p>
+                    <button class="btn-add-cart" onclick="addToCart('Special Thali', 200)">Add to Cart</button>
+                </div>
+            </div>
+            <div class="dish-card card-hover">
+                <img src="https://images.unsplash.com/photo-1708793873401-e8c6c153b76a?w=400&h=300&fit=crop" alt="Paneer Butter Masala" loading="lazy">
+                <div class="dish-content">
+                    <h3>Paneer Butter Masala</h3>
+                    <p class="price">₹180</p>
+                    <button class="btn-add-cart" onclick="addToCart('Paneer Butter Masala', 180)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center" style="margin-top: 3rem;">
+            <a href="pages/menu.html" class="btn-primary">View Full Menu</a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1763750759240-a1398573772a?w=600&h=500&fit=crop" alt="Restaurant Interior" loading="lazy">
+            </div>
+            <div class="about-content">
+                <h2>A Taste of <span class="highlight">Tradition</span></h2>
+                <p>Located in the heart of Mysuru's Kuvempunagara, Hotel Sipayi has been serving the community with authentic flavors and warm hospitality.</p>
+                <p>Our commitment to quality ingredients and traditional cooking methods ensures every dish tells a story.</p>
+                <p>From our famous biryanis to wholesome thalis, each recipe is carefully crafted by our experienced chefs.</p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <div class="stat-number">148+</div>
+                        <div class="stat-label">Happy Reviews</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4.6★</div>
+                        <div class="stat-label">Average Rating</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Fresh Food</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Location CTA Section -->
+<section class="location-cta">
+    <div class="container text-center">
+        <div class="location-icon">📍</div>
+        <h2>Visit Us Today</h2>
+        <p class="location-address">Sahukar Chennaiah Road, Kuvempunagara North</p>
+        <p class="location-address">TK Layout, Mysuru, Karnataka 570009</p>
+        <div class="cta-buttons">
+            <a href="https://maps.google.com/?q=Hotel+Sipayi+Mysuru" target="_blank" class="btn-primary">Get Directions</a>
+            <a href="pages/contact.html" class="btn-secondary">Contact Us</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <h3>Hotel Sipayi</h3>
+            <p>Serving authentic flavors of Mysuru with love and tradition</p>
+            <div class="footer-rating">
+                <span class="star">⭐</span>
+                <span class="rating">4.6</span>
+                <span class="reviews">(148 reviews)</span>
+            </div>
+            <p class="copyright">© 2024 Hotel Sipayi. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- Mobile Sticky CTA -->
+<div class="mobile-cta" id="mobileCta">
+    <a href="pages/menu.html" class="cta-btn order">Order</a>
+    <a href="tel:+919876543210" class="cta-btn call">📞 Call</a>
+    <a href="https://maps.google.com/?q=Hotel+Sipayi+Mysuru" target="_blank" class="cta-btn map">📍 Map</a>
+</div>
+
+<!-- Cart Notification -->
+<div class="cart-notification" id="cartNotification">
+    <span id="notificationText">Item added to cart!</span>
+</div>
+
+<!-- Scripts -->
+<script src="js/cart.js"></script>
+<script src="js/order.js"></script>
+<script src="js/security.js"></script>
+<script>
+    // Navigation functions
+    function toggleMenu() {
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        hamburger.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    }
+
+    function navigateTo(section) {
+        const element = document.getElementById(section);
+        if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+        }
+        const navMenu = document.getElementById('navMenu');
+        const hamburger = document.getElementById('hamburger');
+        navMenu.classList.remove('active');
+        hamburger.classList.remove('active');
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+    });
+</script>
+</body>
+
+</html>
